@@ -119,7 +119,7 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
                                 <Badge
                                     pill
                                     key={`${tg.value}`}
-                                    className={"shadow-sm text-dark"}
+                                    className={"shadow-sm text-dark mx-auto"}
                                     style={{
                                         backgroundColor:
                                             parseInt(tg.value) === 1
@@ -150,9 +150,9 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
 
                 {props.match.params.id ? (
                     <Row className={"justify-content-center w-100 m-0"}>
-                        <Col xs={10} md={8} lg={6}>
+                        <Col xs={12} sm={10} md={8} lg={6}>
                             <Image
-                                className={"border border-dark rounded display-img w-100"}
+                                className={"border border-dark shadow-sm rounded display-img w-100"}
                                 src={blog.img_src}
                             />
                         </Col>
