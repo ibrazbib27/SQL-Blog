@@ -1,0 +1,79 @@
+@import "../../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../../node_modules/bootstrap/scss/_variables.scss";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/media";
+
+.container-fluid {
+  background-color: #afeeee;
+}
+#required_warning {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.required:before {
+  content: "* ";
+  color: red;
+}
+.text-shadowing {
+  text-shadow: 0 0 2px #ff0000, 0 0 1px #0000ff;
+}
+.display-img {
+  height: 250px;
+}
+.pointer {
+  cursor: pointer;
+}
+.nav-active-color {
+  color: rgba(255, 255, 255, 1);
+}
+.nav-active-color:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.nav-color:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.nav-color {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@include media-breakpoint-up(xs) {
+  .zoom {
+    width: 98% !important;
+  }
+  .row-size {
+    width: 80% !important;
+  }
+}
+@include media-breakpoint-up(sm) {
+  .zoom {
+    width: 95% !important;
+  }
+  .row-size {
+    width: 100% !important;
+  }
+}
+@include media-breakpoint-up(md) {
+  .zoom {
+    width: 90% !important;
+  }
+  .row-size {
+    width: 100% !important;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .zoom {
+    width: 85% !important;
+  }
+  .row-size {
+    width: 100% !important;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .zoom {
+    width: 80% !important;
+  }
+  .row-size {
+    width: 90% !important;
+  }
+}
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
