@@ -2,7 +2,7 @@ import * as express from 'express';
 import DB from '../db';
 let router = express.Router();
 
-//handles get all chirps and get chirps by username request
+//handles get all blogs request
 router.get("/blogs", async (req, res) => {
     try {
 
