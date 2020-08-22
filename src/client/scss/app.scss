@@ -42,6 +42,10 @@
   .row-size {
     width: 100% !important;
   }
+  .my-font-size{
+    font-size: 1.17em;
+    font-weight: bolder;
+  }
 }
 @include media-breakpoint-up(sm) {
   .zoom {
@@ -49,6 +53,10 @@
   }
   .row-size {
     width: 100% !important;
+  }
+  .my-font-size{
+    font-size: 1.17em;
+    font-weight: bolder;
   }
 }
 @include media-breakpoint-up(md) {
@@ -58,6 +66,10 @@
   .row-size {
     width: 100% !important;
   }
+  .my-font-size{
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
 }
 @include media-breakpoint-up(lg) {
   .zoom {
@@ -66,6 +78,10 @@
   .row-size {
     width: 100% !important;
   }
+  .my-font-size{
+    font-size: 2em;
+    font-weight: bolder;
+  }
 }
 @include media-breakpoint-up(xl) {
   .zoom {
@@ -73,6 +89,10 @@
   }
   .row-size {
     width: 90% !important;
+  }
+  .my-font-size{
+    font-size: 2em;
+    font-weight: bolder;
   }
 }
 
