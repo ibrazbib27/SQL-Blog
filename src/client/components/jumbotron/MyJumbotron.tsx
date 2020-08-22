@@ -98,10 +98,10 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
             >
                 {props.match.params.id ? (
                     <Row className={"w-100 mx-0"}>
-                        <Col xs={12} className={"text-wrap w-100 h1 text-monospace"}>
+                        <Col xs={12} className={"text-wrap w-100 my-font-size text-monospace"}>
                             {blog.title}
                         </Col>
-                        <Col xs={12} className={"mt-1"}>
+                        <Col xs={12} className={"mt-3"}>
                             <p className={"small font-italic text-white"}>By: {blog.name}</p>
                         </Col>
                         <Col xs={12} className={"mt-1"}>
