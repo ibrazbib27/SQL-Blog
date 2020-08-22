@@ -29,8 +29,8 @@ router.get("/:id/gettag", async (req, res) => {
 //handles get authors request
 router.get("/authors", async (req, res) => {
     try {
-        let chirp = await DB.blog.GetAuthors();
-        res.json(chirp);
+        let authors = await DB.blog.GetAuthors();
+        res.json(authors);
     }
     catch(e){
         console.log(e);
@@ -40,8 +40,8 @@ router.get("/authors", async (req, res) => {
 //handles get all tags
 router.get("/tags", async (req, res) => {
     try {
-        let chirp = await DB.blog.GetTags();
-        res.json(chirp);
+        let tags = await DB.blog.GetTags();
+        res.json(tags);
     }
     catch(e){
         console.log(e);
