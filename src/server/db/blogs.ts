@@ -12,7 +12,7 @@ return new Promise((res, rej) => {
     });
 });
 }
-//returns all chirps
+//returns all authors
 const getAuthors  = async () => {
 
     return new Promise((res, rej) => {
@@ -23,7 +23,7 @@ const getAuthors  = async () => {
         });
     });
 }
-//returns all chirps
+//returns all tags
 const getTags  = async () => {
 
     return new Promise((res, rej) => {
@@ -35,7 +35,7 @@ const getTags  = async () => {
     });
 }
 
-//returns chirps based on username parameter (advanced lab requirement)
+//gets tags from specific blog
 const getBlogTags = async (id: string) => {
     return new Promise((res, rej) => {
         Connection.query(`CALL Blogs.spBlogTags(?);`, [parseInt(id)],(err, result, fields) => {
@@ -45,7 +45,7 @@ const getBlogTags = async (id: string) => {
     });
 }
 
-//posts new chirp to database
+//posts new blog info to database
 const createBlog = async (blog: any) => {
     return new Promise((res, rej) => {
         Connection.query(`INSERT INTO Blogs.Blogs (content, title, img_src, _created, authorid) ` +
@@ -58,7 +58,7 @@ const createBlog = async (blog: any) => {
     });
 }
 
-//updates new user values to user table and mentions table (used heavily with editing chirp and less with creating chirp)
+//posts tag to blog after initially creating the blog
 const createBlogtoTagEntry = async (id: any) => {
     return new Promise((res, rej) => {
         Connection.query(`CALL Blogs.spBlogToTagMatch(?);`, [parseInt(id.tagid)],(err, result, fields) => {
@@ -69,7 +69,7 @@ const createBlogtoTagEntry = async (id: any) => {
 }
 
 
-//updates new user values to user table and mentions table (used heavily with editing chirp and less with creating chirp)
+//updates tags of a blog
 const postTags = async (blogTags: any) => {
     return new Promise((res, rej) => {
         Connection.query(`INSERT INTO Blogs.BlogTags (blogid, tagid) VALUE ('${blogTags.blogid}', '${blogTags.tagid}')`, (err, result) => {
@@ -83,7 +83,7 @@ const postTags = async (blogTags: any) => {
 
 
 
-//gets chirp based on id
+//gets blog info based on id
 const getBlog = async (id: string) => {
 
     return new Promise((res, rej) => {
@@ -95,7 +95,7 @@ const getBlog = async (id: string) => {
     });
 }
 
-//deletes chirp based on id and deletes all mentions of the chirp and deletes any unused usernames in the users table
+//deletes a blog based on id
 const deleteBlog = async (id: string) => {
     return new Promise((res, rej) => {
         Connection.query(`DELETE FROM Blogs.Blogs WHERE id = '${id}';`, (err, result) => {
@@ -106,7 +106,7 @@ const deleteBlog = async (id: string) => {
     });
 }
 
-//deletes chirp based on id and deletes all mentions of the chirp and deletes any unused usernames in the users table
+//deletes tags of a blog
 const deleteTags = async (id: string) => {
     return new Promise((res, rej) => {
         Connection.query(`DELETE FROM Blogs.BlogTags WHERE blogid = '${id}';`, (err, result) => {
@@ -117,7 +117,7 @@ const deleteTags = async (id: string) => {
     });
 }
 
-//updates chirp based on id
+//updates blog based on id
 const updateBlog = async (id: string, blog: any) => {
     return new Promise((res, rej) => {
 
