@@ -2,7 +2,7 @@ import * as express from 'express';
 import DB from "../db";
 let router = express.Router();
 
-//handles get chirp request
+//handles get blogs request
 router.get("/:id/getblog", async (req, res) => {
     try {
         let id = await req.params.id;
@@ -14,7 +14,7 @@ router.get("/:id/getblog", async (req, res) => {
         res.sendStatus(500);
     }
 });
-//handles get chirp request
+//handles get blog tags request
 router.get("/:id/gettag", async (req, res) => {
     try {
         let id = await req.params.id;
@@ -26,7 +26,7 @@ router.get("/:id/gettag", async (req, res) => {
         res.sendStatus(500);
     }
 });
-//handles get chirp request
+//handles get authors request
 router.get("/authors", async (req, res) => {
     try {
         let chirp = await DB.blog.GetAuthors();
@@ -37,7 +37,7 @@ router.get("/authors", async (req, res) => {
         res.sendStatus(500);
     }
 });
-//handles get chirp request
+//handles get all tags
 router.get("/tags", async (req, res) => {
     try {
         let chirp = await DB.blog.GetTags();
@@ -49,7 +49,7 @@ router.get("/tags", async (req, res) => {
     }
 });
 
-//handles posting new chirp
+//handles posting new blog
 router.post("/add", async (req, res) => {
     try {
        await DB.blog.CreateBlog(req.body);
@@ -61,7 +61,7 @@ router.post("/add", async (req, res) => {
     }
 });
 
-//handles posting new username
+//handles posting new blog tags after intially creating a blog
 router.post("/createblogtags", async (req, res) => {
     try {
         await DB.blog.CreateBlogtoTagEntry(req.body);
@@ -73,7 +73,7 @@ router.post("/createblogtags", async (req, res) => {
     }
 });
 
-//handles posting new username
+//handles posting new blog tags after edit
 router.post("/blogtagspost", async (req, res) => {
     try {
         await DB.blog.PostTags(req.body);
@@ -85,7 +85,7 @@ router.post("/blogtagspost", async (req, res) => {
     }
 });
 
-//handles chirp delete request
+//handles blog delete request
 router.delete("/:id/blog", async (req, res) => {
     try {
         let id = await req.params.id;
@@ -97,7 +97,7 @@ router.delete("/:id/blog", async (req, res) => {
         res.sendStatus(500);
     }
 });
-//handles chirp delete request
+//handles tags delete request
 router.delete("/:id/tags", async (req, res) => {
     try {
 
@@ -111,7 +111,7 @@ router.delete("/:id/tags", async (req, res) => {
     }
 });
 
-//handles chirp updates
+//handles blog updates
 router.put("/:id/blog", async (req, res) => {
     try {
         let id = await req.params.id;
