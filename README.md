@@ -3,12 +3,19 @@ This project is a starting point for a TypeScript based React app that also has 
 
 There are 2 different Webpack configurations. One for the server and one for the client.
 
-##Configurations
+---
+---
+---
+
+## Configurations
 
 #### ***Privileges***
 create user 'Blog_DB'@'localhost' identified by '(your password)';<br />
 grant all privileges on Blogs.* to 'Blog_DB'@'localhost';
 
+---
+---
+---
 
 ## DDLs
 
@@ -56,7 +63,7 @@ CREATE TABLE `Blogs` (
   PRIMARY KEY (`id`),
   KEY `fk_blogauthors` (`authorid`),
   CONSTRAINT `fk_blogauthors` FOREIGN KEY (`authorid`) REFERENCES `Authors` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
 
 ---
 #### ***Tags Table***
@@ -127,8 +134,11 @@ CREATE TABLE `BlogTags` (
   KEY `fk_matchtags` (`tagid`),
   CONSTRAINT `fk_matchblogs` FOREIGN KEY (`blogid`) REFERENCES `Blogs` (`id`),
   CONSTRAINT `fk_matchtags` FOREIGN KEY (`tagid`) REFERENCES `Tags` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+---
+---
+---
 ## Stored Procedures
 #### ***spBlogToTagMatch***
 
@@ -154,6 +164,9 @@ BEGIN
 END //
 DELIMITER ;
 
+---
+---
+---
 
 ## Test Data
 IT IS IMPORTANT THAT ALL DATA ENTRIES ARE ENTERED USING THE APPLICATION.<br />
@@ -163,9 +176,7 @@ AS FOR THE BLOG AUTHOR AND TAGS FEEL FREE TO PICK TAGS AND AUTHORS OF YOUR CHOOS
 #### ***Entry 1***
 * **TITLE:** I’m not sure I’ll be Inter manager next season – Conte
 * **IMAGE URL:** https://images.daznservices.com/di/library/GOAL/60/be/antonio-conte-inter-europa-league-final_wja5r2u9bod19jwu4p8a2nzp.jpg
-* **CONTENT:** The former Juventus and Chelsea boss enjoyed an excellent debut season with the Nerazzurri, which saw them push the Turin giants in Serie A before finishing second, while they were also Europa League runners-up. Speaking after a 3-2 loss to Sevilla in the Europa League final on Friday , Conte suggested that it might have been his last game in charge of the club. “We're going to meet next week with the club and we'll decide about my future. I'm not sure that I'll be the Inter manager next season, we'll decide together,” he told Sky Sport Italia . “Inter will plan the future with or without me." Conte's future has been in doubt since the conclusion of the Serie A campaign earlier this month, after which he launched a scathing attack on the club's directors. “I don’t think the work of the players has been recognised and I don’t think my work has been recognised,” he said. “We all received very little protection from the club, absolutely zero. “I don’t like it when people jump on the bandwagon – they have to be there in the good times as well as the bad and here at Inter it wasn’t like that, I’m sorry to say. “We have to grow and improve in all areas, including off the field, and a big club should protect its players more.” After Friday's game in Cologne, Inter president Steven Zhang did little to ease fears over the future of the 51-year-old. “He and his staff, together with the players and all the other members of the club are doing a great job,” he told Sky Sport Italia . “Now the players and the staff will rest, because they deserve it, and then we will plan for the future. “We want to improve next season. The balance of this season is very positive. We are on a path that has allowed us to get to the final. “All of us, on and off the pitch, are doing a great job and are heading in the right direction. Winning or losing is part of football, but getting to the final makes us optimistic for the future.”
-               
-
+* **CONTENT:** The former Juventus and Chelsea boss enjoyed an excellent debut season with the Nerazzurri, which saw them push the Turin giants in Serie A before finishing second, while they were also Europa League runners-up. Speaking after a 3-2 loss to Sevilla in the Europa League final on Friday , Conte suggested that it might have been his last game in charge of the club. “We're going to meet next week with the club and we'll decide about my future. I'm not sure that I'll be the Inter manager next season, we'll decide together,” he told Sky Sport Italia . “Inter will plan the future with or without me." Conte's future has been in doubt since the conclusion of the Serie A campaign earlier this month, after which he launched a scathing attack on the club's directors. “I don’t think the work of the players has been recognised and I don’t think my work has been recognised,” he said. “We all received very little protection from the club, absolutely zero. “I don’t like it when people jump on the bandwagon – they have to be there in the good times as well as the bad and here at Inter it wasn’t like that, I’m sorry to say. “We have to grow and improve in all areas, including off the field, and a big club should protect its players more.” After Friday's game in Cologne, Inter president Steven Zhang did little to ease fears over the future of the 51-year-old. “He and his staff, together with the players and all the other members of the club are doing a great job,” he told Sky Sport Italia . “Now the players and the staff will rest, because they deserve it, and then we will plan for the future. “We want to improve next season. The balance of this season is very positive. We are on a path that has allowed us to get to the final. “All of us, on and off the pitch, are doing a great job and are heading in the right direction. Winning or losing is part of football, but getting to the final makes us optimistic for the future.”              
 ---
 #### ***Entry 2***
 * **TITLE:** Introducing Covalence's New Subatomic Plan
@@ -182,22 +193,30 @@ AS FOR THE BLOG AUTHOR AND TAGS FEEL FREE TO PICK TAGS AND AUTHORS OF YOUR CHOOS
 * **IMAGE URL:** (default)
 * **CONTENT:** Welcome to the blog!
 ---
+---
+---
 
 ## Key Features
 Use the info icons to help you properly submit a blog. You can also edit tags with this application; add as many and remove
 all but one at any time. 
 
-
+---
+---
+---
 
 
 ## Server
 The server build process compiles the TypeScript files found in `/src/server` into a single bundled JavaScript file located in the `/dist` directory.
-
+---
+---
+---
 ## Client
 The client build process compiles the React app located in `/src/client` into a bundled located at `/public/js/app.js`.
 
 The client configuration will also build the Sass files found at `/src/client/scss`. The App component imports the `app.scss` file which already includes an import for Bootstrap.
-
+---
+---
+---
 ## Running the project
 In order to run the server, use `npm run dev`, and the server will start on port 3000 (http://localhost:3000). 
 
