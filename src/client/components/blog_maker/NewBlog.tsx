@@ -31,6 +31,12 @@ export interface ModalObj {
 
 const NewBlog: React.FC<NewBlogProps> = (props) => {
     $(document).ready(function () {
+
+        if(blog.content.length > 0  && trueLength) {
+            setTextLength(10000 - blog.content.length);
+            setTrueLength(false);
+        }
+
         tagsValidationColors("#ced4da");
         if (!props.match.params.id) authorsValidationColors("#ced4da");
         if ($("#tags").hasClass("is-invalid") || $("#tags").hasClass("is-valid")) {
@@ -111,6 +117,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
     const [authors, setAuthors] = useState<{ value: string; label: string }[]>(
         []
     );
+    const [trueLength, setTrueLength] = useState<boolean>(true);
     const [tags, setTags] = useState<{ value: string; label: string }[]>([]);
     const [validated, setValidated] = useState(false);
     const isValidated = () => setValidated(true);
@@ -402,7 +409,8 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
 
     return (
         <>
-            <Card className="text-center d-flex align-items-stretch shadow-lg col-12 col-sm-10 col-lg-8 p-0">
+            <Card style={{backgroundColor: "lightgrey"}}
+                  className="text-center d-flex align-items-stretch shadow-lg zoom p-0 border border-dark text-dark">
                 <Form
                     noValidate
                     validated={validated}
@@ -410,7 +418,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                     id={"blog_form"}
                     className={"m-0"}
                 >
-                    <Form.Text className={"font-italic small m-0"} muted>
+                    <Form.Text className={"font-italic small text-dark m-0"} >
                         ( <span className={"required"}></span>Indicates required )
                     </Form.Text>
 
@@ -458,7 +466,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                                         ? "http://www.pngall.com/wp-content/uploads/2/Question-Mark-PNG-Picture.png"
                                         : blog.img_src
                                 }
-                                className={"shadow-sm display-img w-100"}
+                                className={"shadow-sm display-img w-100 border border-dark"}
                                 id={"img_src"}
                                 rounded
                             />
@@ -618,6 +626,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                                     defaultValue={
                                         props.match.params.id === undefined ? "" : blog.content
                                     }
+
                                     rows={5}
                                     onInput={handleChange}
                                     name={"content"}
@@ -626,7 +635,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                                     maxLength={10000}
                                     required
                                 />
-                                <Form.Text className={"font-italic small text-left"} muted>
+                                <Form.Text key={textLength} className={"font-italic small text-left text-dark"} >
                                     You have {textLength} characters left.
                                 </Form.Text>
                                 <Form.Control.Feedback type="invalid" className={"text-left"}>
@@ -635,16 +644,21 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                             </Form.Group>
                         </Col>
                     </Row>
+                    <footer
+                        className={
+                            " bg-dark text-white align-self-center rounded-bottom mt-auto"
+                        }
+                    >
                     <Row
                         className={
                             props.match.params.id === undefined
-                                ? "mt-5 mb-3 mx-0 w-100 justify-content-center"
-                                : "mt-5 mb-3 mx-0 w-100 justify-content-between"
+                                ? "mx-0 p-0 w-100 justify-content-center"
+                                : "mx-0 p-0 w-100 justify-content-between"
                         }
                     >
-                        {" "}
+                         {" "}
                         {props.match.params.id === undefined ? (
-                            <div className={"col-xl-3 col-lg-5 col-md-10 col-sm-12"}>
+                            <div className={"mx-1 my-md-3 my-3 d-flex align-self-center col-xl-3 col-lg-5 col-md-10 col-sm-12"}>
                                 <Button
                                     type="submit"
                                     className="shadow-sm w-100"
@@ -672,6 +686,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                             </>
                         )}{" "}
                     </Row>
+                    </footer>
                 </Form>
             </Card>
         </>
