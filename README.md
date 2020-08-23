@@ -13,8 +13,9 @@ There are 2 different Webpack configurations. One for the server and one for the
 create user 'Blog_DB'@'localhost' identified by '(your password)';<br />
 grant all privileges on Blogs.* to 'Blog_DB'@'localhost';
 <br />
-
----
+<br />
+<br />
+<br />
 
 ## DDLs
 
@@ -141,8 +142,9 @@ CREATE TABLE `BlogTags` (
 
 
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 ## Stored Procedures
@@ -172,8 +174,9 @@ END //
 DELIMITER ;
 
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 
@@ -206,8 +209,9 @@ AS FOR THE BLOG AUTHOR AND TAGS FEEL FREE TO PICK TAGS AND AUTHORS OF YOUR CHOOS
 * **CONTENT:** Welcome to the blog!
 
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 
@@ -216,8 +220,9 @@ Use the info icons to help you properly submit a blog. You can also edit tags wi
 all but one at any time. 
 
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 
@@ -225,8 +230,9 @@ all but one at any time.
 ## Server
 The server build process compiles the TypeScript files found in `/src/server` into a single bundled JavaScript file located in the `/dist` directory.
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 ## Client
@@ -234,8 +240,9 @@ The client build process compiles the React app located in `/src/client` into a 
 
 The client configuration will also build the Sass files found at `/src/client/scss`. The App component imports the `app.scss` file which already includes an import for Bootstrap.
 <br />
-
----
+<br />
+<br />
+<br />
 
 
 ## Running the project
