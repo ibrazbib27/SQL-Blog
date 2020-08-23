@@ -101,7 +101,7 @@ const ModalConfirmation: React.FC<ModalProps> = (props) => {
     return (
         <>
             <div
-                className={"col-12 col-md-5 col-lg-4 my-md-0 my-1 order-2 order-md-1"}
+                className={"mx-1 my-md-3 my-3 order-2 order-md-1 col-lg-3 col-md-5 col-12"}
             >
                 <Button
                     onClick={() => {
@@ -115,7 +115,7 @@ const ModalConfirmation: React.FC<ModalProps> = (props) => {
                 </Button>
             </div>{" "}
             <div
-                className={"col-12 col-md-5 col-lg-4 my-1 my-md-0 order-1 order-md-2"}
+                className={"mx-1 my-md-3 my-3 order-1 order-md-2 col-lg-3 col-md-5 col-12"}
             >
                 <Button
                     onClick={() => {
