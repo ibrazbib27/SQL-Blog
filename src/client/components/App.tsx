@@ -85,7 +85,7 @@ const App: React.FC<AppProps> = (props) => {
                                 <>
                                     <MyNavbar />
                                     <Container
-                                        className={"d-flex justify-content-center px-0 mt-5 min-vh-100"}
+                                        className={"d-flex justify-content-center px-1 mt-5 min-vh-100"}
                                         fluid
                                     >
                                         <MyJumbotron
