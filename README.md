@@ -132,6 +132,7 @@ CREATE TABLE `BlogTags` (
 ## Stored Procedures
 #### ***spBlogToTagMatch***
 
+DELIMITER //
 CREATE PROCEDURE spBlogToTagMatch(my_tagid int)
 BEGIN
 	DECLARE my_blogid int default 0;
