@@ -21,13 +21,13 @@ grant all privileges on Blogs.* to 'Blog_DB'@'localhost';
 
 #### ***Authors Table***
 
-CREATE TABLE `Authors` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT ' ',
-  `email` varchar(100) NOT NULL DEFAULT ' ',
-  `_created` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
+CREATE TABLE `Authors` ( <br />
+  `id` int(11) NOT NULL AUTO_INCREMENT, <br />
+  `name` varchar(50) NOT NULL DEFAULT ' ', <br />
+  `email` varchar(100) NOT NULL DEFAULT ' ', <br />
+  `_created` datetime DEFAULT CURRENT_TIMESTAMP, <br />
+  PRIMARY KEY (`id`) <br />
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1; <br />
 
 INSERT INTO `Blogs`.`Authors`
 (`id`,
