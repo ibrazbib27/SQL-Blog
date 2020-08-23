@@ -87,10 +87,14 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
     return (
         <>
             <Jumbotron
-                style={{ wordBreak: "break-word" }}
+                style={props.match.params.id ?
+                    { wordBreak: "break-word", backgroundColor: "lightgrey"}
+                    :
+                    {wordBreak: "break-word"}
+                }
                 className={
                     props.match.params.id
-                        ? "text-center shadow-lg bg-secondary text-white align-self-center mt-5 rounded p-0 zoom mb-5 mb-0 pb-0 pt-2"
+                        ? "text-center shadow-lg border border-dark text-dark align-self-center mt-5 rounded p-0 zoom mb-5 mb-0 pb-0 pt-2"
                         : props.text_info.button
                         ? "text-center zoom shadow-lg bg-secondary text-white align-self-center mt-5 px-0 py-5"
                         : "text-center zoom shadow-lg bg-secondary text-white align-self-center mt-5 px-0 py-5"
@@ -102,10 +106,10 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
                             {blog.title}
                         </Col>
                         <Col xs={12} className={"mt-3"}>
-                            <p className={"small font-italic text-white"}>By: {blog.name}</p>
+                            <p className={"small font-italic text-dark"}>By: {blog.name}</p>
                         </Col>
                         <Col xs={12} className={"mt-1"}>
-                            <p className={"small font-italic text-white"}>{blog._created}</p>
+                            <p className={"small font-italic text-dark"}>{blog._created}</p>
                         </Col>
                     </Row>
                 ) : (
