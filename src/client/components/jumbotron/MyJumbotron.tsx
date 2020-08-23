@@ -33,8 +33,8 @@ const MyJumbotron: React.FC<MyJumbotronProps> = (props) => {
             $(".container-fluid").html($("#blog").html());
             $("#blog").remove();
             $(".container-fluid").removeClass("align-items-center");
-            $(".container-fluid").addClass("justify-content-center");
         }
+
     });
     let getBlog = async () => {
         try {
