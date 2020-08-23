@@ -451,17 +451,15 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                         </Form.Group>
                     </Row>
                     <Row className={"w-100 justify-content-center mb-0 mx-0 mt-5"}>
-                        <Col xs={8} md={6} className={"my-2 order-1 display-img"}>
+                        <Col xs={12} sm={10} md={8} lg={6} className={"my-2 order-1 display-img"}>
                             <Image
                                 src={
                                     props.match.params.id === undefined
                                         ? "http://www.pngall.com/wp-content/uploads/2/Question-Mark-PNG-Picture.png"
                                         : blog.img_src
                                 }
-                                className={"shadow-sm display-img"}
+                                className={"shadow-sm display-img w-100"}
                                 id={"img_src"}
-                                width="100%"
-                                height="100%"
                                 rounded
                             />
                         </Col>
