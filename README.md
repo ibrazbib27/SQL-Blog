@@ -55,28 +55,28 @@ VALUES
 
 #### ***Blogs Table***
 
-CREATE TABLE `Blogs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` longtext,
-  `title` varchar(60) DEFAULT NULL,
-  `authorid` int(11) NOT NULL,
-  `img_src` text,
-  `_created` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_blogauthors` (`authorid`),
-  CONSTRAINT `fk_blogauthors` FOREIGN KEY (`authorid`) REFERENCES `Authors` (`id`)
+CREATE TABLE `Blogs` ( <br />
+  `id` int(11) NOT NULL AUTO_INCREMENT, <br />
+  `content` longtext, <br />
+  `title` varchar(60) DEFAULT NULL, <br />
+  `authorid` int(11) NOT NULL, <br />
+  `img_src` text, <br />
+  `_created` text NOT NULL, <br />
+  PRIMARY KEY (`id`), <br />
+  KEY `fk_blogauthors` (`authorid`), <br />
+  CONSTRAINT `fk_blogauthors` FOREIGN KEY (`authorid`) REFERENCES `Authors` (`id`) <br />
 ) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
 <br />
 <br />
 
 #### ***Tags Table***
 
-CREATE TABLE `Tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT ' ',
-  `_created` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
+CREATE TABLE `Tags` ( <br />
+  `id` int(11) NOT NULL AUTO_INCREMENT, <br />
+  `name` varchar(50) NOT NULL DEFAULT ' ', <br />
+  `_created` datetime DEFAULT CURRENT_TIMESTAMP, <br />
+  PRIMARY KEY (`id`) <br />
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1; <br />
 
 INSERT INTO `Blogs`.`Tags`
 (`id`,
@@ -131,13 +131,13 @@ VALUES
 
 #### ***BlogTags Table***
 
-CREATE TABLE `BlogTags` (
-  `blogid` int(11) NOT NULL,
-  `tagid` int(11) NOT NULL,
-  PRIMARY KEY (`blogid`,`tagid`),
-  KEY `fk_matchtags` (`tagid`),
-  CONSTRAINT `fk_matchblogs` FOREIGN KEY (`blogid`) REFERENCES `Blogs` (`id`),
-  CONSTRAINT `fk_matchtags` FOREIGN KEY (`tagid`) REFERENCES `Tags` (`id`)
+CREATE TABLE `BlogTags` ( <br />
+  `blogid` int(11) NOT NULL, <br />
+  `tagid` int(11) NOT NULL, <br />
+  PRIMARY KEY (`blogid`,`tagid`), <br />
+  KEY `fk_matchtags` (`tagid`), <br />
+  CONSTRAINT `fk_matchblogs` FOREIGN KEY (`blogid`) REFERENCES `Blogs` (`id`), <br />
+  CONSTRAINT `fk_matchtags` FOREIGN KEY (`tagid`) REFERENCES `Tags` (`id`) <br />
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -150,27 +150,27 @@ CREATE TABLE `BlogTags` (
 ## Stored Procedures
 #### ***spBlogToTagMatch***
 
-DELIMITER //
-CREATE PROCEDURE spBlogToTagMatch(my_tagid int)
-BEGIN
-	DECLARE my_blogid int default 0;
-	SELECT id INTO my_blogid FROM Blogs.Blogs ORDER BY id DESC LIMIT 1;
-	INSERT INTO Blogs.BlogTags(blogid, tagid) VALUES (my_blogid, my_tagid);
-END //
-DELIMITER ;
+DELIMITER // <br />
+CREATE PROCEDURE spBlogToTagMatch(my_tagid int) <br />
+BEGIN <br />
+	DECLARE my_blogid int default 0; <br />
+	SELECT id INTO my_blogid FROM Blogs.Blogs ORDER BY id DESC LIMIT 1; <br />
+	INSERT INTO Blogs.BlogTags(blogid, tagid) VALUES (my_blogid, my_tagid); <br />
+END // <br />
+DELIMITER ; 
 <br />
 <br />
 
 #### ***spBlogTags***
 
-DELIMITER //
-CREATE PROCEDURE spBlogTags(blogid int)
-BEGIN
-	 SELECT t.id, t.name FROM Blogs.Tags t 
-     JOIN Blogs.BlogTags bt on bt.tagid = t.id 
-	 JOIN Blogs.Blogs b on bt.blogid = b.id 
-     WHERE b.id = blogid;
-END //
+DELIMITER // <br />
+CREATE PROCEDURE spBlogTags(blogid int) <br />
+BEGIN <br />
+	 SELECT t.id, t.name FROM Blogs.Tags t <br />
+     JOIN Blogs.BlogTags bt on bt.tagid = t.id <br />
+	 JOIN Blogs.Blogs b on bt.blogid = b.id <br />
+     WHERE b.id = blogid; <br />
+END // <br />
 DELIMITER ;
 
 <br />
