@@ -110,12 +110,12 @@ const App: React.FC<AppProps> = (props) => {
                                 <>
                                     <MyNavbar />
                                     <Container
-                                        className={"d-flex justify-content-center min-vh-100"}
+                                        className={"d-flex justify-content-center px-1 min-vh-100"}
                                         fluid
                                     >
                                         <Row
                                             className={
-                                                "justify-content-center align-self-center w-100 align-items-stretch py-5 mt-5"
+                                                "justify-content-center align-self-center px-0 w-100 align-items-stretch py-5 mt-5"
                                             }
                                         >
                                             <NewBlog
