@@ -3,8 +3,9 @@ This project is a starting point for a TypeScript based React app that also has 
 
 There are 2 different Webpack configurations. One for the server and one for the client.
 <br />
-
----
+<br />
+<br />
+<br />
 
 ## Configurations
 
