@@ -5,7 +5,7 @@ There are 2 different Webpack configurations. One for the server and one for the
 <br />
 
 ---
-<br />
+
 ## Configurations
 
 #### ***Privileges***
@@ -14,7 +14,7 @@ grant all privileges on Blogs.* to 'Blog_DB'@'localhost';
 <br />
 
 ---
-<br />
+
 ## DDLs
 
 #### ***Authors Table***
@@ -143,7 +143,7 @@ CREATE TABLE `BlogTags` (
 
 ---
 
-<br />
+
 ## Stored Procedures
 #### ***spBlogToTagMatch***
 
@@ -174,7 +174,7 @@ DELIMITER ;
 
 ---
 
-<br />
+
 
 ## Test Data
 IT IS IMPORTANT THAT ALL DATA ENTRIES ARE ENTERED USING THE APPLICATION.<br />
@@ -208,7 +208,7 @@ AS FOR THE BLOG AUTHOR AND TAGS FEEL FREE TO PICK TAGS AND AUTHORS OF YOUR CHOOS
 
 ---
 
-<br />
+
 
 ## Key Features
 Use the info icons to help you properly submit a blog. You can also edit tags with this application; add as many and remove
@@ -218,7 +218,7 @@ all but one at any time.
 
 ---
 
-<br />
+
 
 
 ## Server
@@ -227,7 +227,7 @@ The server build process compiles the TypeScript files found in `/src/server` in
 
 ---
 
-<br />
+
 ## Client
 The client build process compiles the React app located in `/src/client` into a bundled located at `/public/js/app.js`.
 
@@ -236,7 +236,7 @@ The client configuration will also build the Sass files found at `/src/client/sc
 
 ---
 
-<br />
+
 ## Running the project
 In order to run the server, use `npm run dev`, and the server will start on port 3000 (http://localhost:3000). 
 
