@@ -131,6 +131,7 @@ CREATE TABLE `BlogTags` (
 
 ## Stored Procedures
 #### ***spBlogToTagMatch***
+
 CREATE PROCEDURE spBlogToTagMatch(my_tagid int)
 BEGIN
 	DECLARE my_blogid int default 0;
@@ -138,8 +139,10 @@ BEGIN
 	INSERT INTO Blogs.BlogTags(blogid, tagid) VALUES (my_blogid, my_tagid);
 END //
 DELIMITER ;
+
 ---
 #### ***spBlogTags***
+
 DELIMITER //
 CREATE PROCEDURE spBlogTags(blogid int)
 BEGIN
@@ -149,6 +152,7 @@ BEGIN
      WHERE b.id = blogid;
 END //
 DELIMITER ;
+
 
 ## Test Data
 IT IS IMPORTANT THAT ALL DATA ENTRIES ARE ENTERED USING THE APPLICATION.<br />
