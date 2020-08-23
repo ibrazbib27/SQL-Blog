@@ -658,7 +658,7 @@ const NewBlog: React.FC<NewBlogProps> = (props) => {
                     >
                          {" "}
                         {props.match.params.id === undefined ? (
-                            <div className={"mx-1 my-md-3 my-3 d-flex align-self-center col-xl-3 col-lg-5 col-md-10 col-sm-12"}>
+                            <div className={"mx-1 my-md-3 my-3 d-flex align-self-center col-xl-3  col-lg-4 col-md-5 col-sm-6 col-12"}>
                                 <Button
                                     type="submit"
                                     className="shadow-sm w-100"
