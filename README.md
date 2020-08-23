@@ -13,15 +13,39 @@ grant all privileges on Blogs.* to 'Blog_DB'@'localhost';
 ## DDLs
 
 #### ***Authors Table***
+
 CREATE TABLE `Authors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT ' ',
   `email` varchar(100) NOT NULL DEFAULT ' ',
   `_created` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
+
+INSERT INTO `Blogs`.`Authors`
+(`id`,
+`name`,
+`email`)
+VALUES
+(1, 'Billy Joe', 'billyj@gmail.com');
+
+INSERT INTO `Blogs`.`Authors`
+(`id`,
+`name`,
+`email`)
+VALUES
+(2, 'Rachel Smith', 'rachels@gmail.com');
+
+INSERT INTO `Blogs`.`Authors`
+(`id`,
+`name`,
+`email`)
+VALUES
+(3, 'Daniel Williams', 'danielw@gmail.com');
+
 ---
 #### ***Blogs Table***
+
 CREATE TABLE `Blogs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` longtext,
@@ -33,16 +57,69 @@ CREATE TABLE `Blogs` (
   KEY `fk_blogauthors` (`authorid`),
   CONSTRAINT `fk_blogauthors` FOREIGN KEY (`authorid`) REFERENCES `Authors` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1
+
 ---
 #### ***Tags Table***
+
 CREATE TABLE `Tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT ' ',
   `_created` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(1, 'Books');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(2, 'Covalence');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(3, 'Domestic');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(4, 'International');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(5, 'Legal');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(6, 'Other');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(7, 'Sports');
+
+INSERT INTO `Blogs`.`Tags`
+(`id`,
+`name`)
+VALUES
+(8, 'TV');
+
+
 ---
 #### ***BlogTags Table***
+
 CREATE TABLE `BlogTags` (
   `blogid` int(11) NOT NULL,
   `tagid` int(11) NOT NULL,
