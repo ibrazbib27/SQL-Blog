@@ -77,7 +77,7 @@ const AllBlogs: React.FC<AllBlogsProps> = (props) => {
                     <Col
                         className={
                             blogs.length > 1
-                                ? "my-3 py-3 px-0 px-sm-2 d-flex align-items-stretch"
+                                ? "my-3 py-3 d-flex align-items-stretch"
                                 : "my-3 py-3 px-0 px-sm-2"
                         }
                         key={blog.id}
