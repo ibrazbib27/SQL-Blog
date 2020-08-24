@@ -59,10 +59,10 @@ const App: React.FC<AppProps> = (props) => {
                                         sm={2}
                                         md={3}
                                         lg={3}
-                                        xl={3}
+                                        xl={4}
                                         id={"blog"}
                                         className={
-                                            "justify-content-center justify-content-md-around align-items-center mt-5 row-size"
+                                            "justify-content-center justify-content-sm-around align-items-center mt-5 w-100"
                                         }
                                     >
                                         <AllBlogs
