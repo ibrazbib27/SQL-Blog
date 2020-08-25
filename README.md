@@ -27,7 +27,7 @@ CREATE TABLE `Authors` ( <br />
   `email` varchar(100) NOT NULL DEFAULT ' ', <br />
   `_created` datetime DEFAULT CURRENT_TIMESTAMP, <br />
   PRIMARY KEY (`id`) <br />
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1; <br />
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1; <br />
 
 INSERT INTO `Blogs`.`Authors`
 (`id`,
@@ -65,7 +65,7 @@ CREATE TABLE `Blogs` ( <br />
   PRIMARY KEY (`id`), <br />
   KEY `fk_blogauthors` (`authorid`), <br />
   CONSTRAINT `fk_blogauthors` FOREIGN KEY (`authorid`) REFERENCES `Authors` (`id`) <br />
-) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 <br />
 <br />
 
@@ -76,7 +76,7 @@ CREATE TABLE `Tags` ( <br />
   `name` varchar(50) NOT NULL DEFAULT ' ', <br />
   `_created` datetime DEFAULT CURRENT_TIMESTAMP, <br />
   PRIMARY KEY (`id`) <br />
-) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1; <br />
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1; <br />
 
 INSERT INTO `Blogs`.`Tags`
 (`id`,
